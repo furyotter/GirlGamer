@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>女性玩家，正在改变游戏市场</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Playfair+Display:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: rgb(211, 109, 108);
+        --primary-light: rgba(211, 109, 108, 0.1);
+        --primary-medium: rgba(211, 109, 108, 0.25);
+        --secondary: rgb(151, 159, 224);
+        --secondary-light: rgba(151, 159, 224, 0.1);
+        --text: #2d2d2d;
+        --text-light: #555;
+        --bg: #fdfbfb;
+        --bg-warm: #fff8f8;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Noto Serif SC", "PingFang SC", "Microsoft YaHei", serif;
+        background-color: var(--bg);
+        background-image:
+          radial-gradient(
+            ellipse 900px 700px at 50% -5%,
+            var(--bg-warm) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse 800px 800px at 15% 45%,
+            rgba(211, 109, 108, 0.07) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse 700px 600px at 85% 65%,
+            rgba(151, 159, 224, 0.05) 0%,
+            transparent 55%
+          );
+        background-repeat: no-repeat;
+        color: var(--text);
+        line-height: 1.9;
+        font-size: 17px;
+        overflow-x: hidden;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 60px 20px;
+        position: relative;
+        background: transparent;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          var(--secondary-light) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(30px, -30px);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+      }
+
+      .hero-subtitle {
+        font-size: 14px;
+        letter-spacing: 6px;
+        color: var(--primary);
+        margin-bottom: 24px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .hero h1 {
+        font-family: "Noto Serif SC", serif;
+        font-size: clamp(2.2rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.3;
+        color: var(--text);
+        margin-bottom: 40px;
+      }
+
+      .hero h1 .highlight {
+        color: var(--primary);
+        position: relative;
+      }
+
+      .hero h1 .highlight::after {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background: var(--secondary-light);
+        z-index: -1;
+        border-radius: 4px;
+      }
+
+      .hero-intro {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        max-width: 640px;
+        margin: 0 auto 32px;
+        line-height: 2;
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary);
+        font-size: 13px;
+        letter-spacing: 2px;
+        animation: bounce 2s infinite;
+        cursor: pointer;
+        text-decoration: none;
+        z-index: 2;
+      }
+
+      .scroll-indicator .arrow {
+        width: 24px;
+        height: 24px;
+        border-right: 2px solid var(--primary);
+        border-bottom: 2px solid var(--primary);
+        transform: rotate(45deg);
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(10px);
+        }
+      }
+
+      /* Main Content */
+      .content {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Section Styling */
+      .section {
+        padding: 80px 0;
+        position: relative;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: baseline;
+        gap: 20px;
+        margin-bottom: 48px;
+        flex-wrap: wrap;
+      }
+
+      .section-number {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3rem, 8vw, 5.5rem);
+        font-weight: 900;
+        color: var(--primary);
+        line-height: 1;
+        opacity: 0.85;
+      }
+
+      .section-title {
+        font-family: "Noto Serif SC", serif;
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+        font-weight: 700;
+        color: var(--text);
+        line-height: 1.4;
+      }
+
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--primary-medium),
+          transparent
+        );
+        margin: 0 auto;
+        max-width: 200px;
+      }
+
+      /* Paragraphs */
+      p {
+        margin-bottom: 1.6em;
+        text-align: justify;
+        text-indent: 0;
+      }
+
+      /* Blockquote */
+      blockquote {
+        margin: 40px 0;
+        padding: 28px 32px;
+        background: var(--secondary-light);
+        border-left: 4px solid var(--secondary);
+        border-radius: 0 12px 12px 0;
+        font-style: italic;
+        color: var(--text);
+        position: relative;
+      }
+
+      blockquote p {
+        text-indent: 0;
+        margin-bottom: 0;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Images */
+      .image-container {
+        margin: 48px auto;
+        max-width: 60%;
+        text-align: center;
+      }
+
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.08),
+          0 2px 8px rgba(0, 0, 0, 0.04);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .image-container img:hover {
+        transform: translateY(-4px);
+        box-shadow:
+          0 16px 48px rgba(0, 0, 0, 0.12),
+          0 4px 12px rgba(0, 0, 0, 0.06);
+      }
+
+      .image-caption {
+        margin-top: 16px;
+        font-size: 14px;
+        color: #888;
+        font-style: italic;
+      }
+
+      /* Intro Section (before chapters) */
+      .intro-section {
+        padding: 100px 0 40px;
+        text-align: center;
+      }
+
+      .intro-section p {
+        text-align: center;
+        text-indent: 0;
+        font-size: 1.15rem;
+        line-height: 2.2;
+        color: var(--text-light);
+      }
+
+      .intro-section .lead {
+        font-size: 1.4rem;
+        color: var(--primary);
+        font-weight: 600;
+        margin-top: 40px;
+      }
+
+      /* References */
+      .references {
+        margin-top: 80px;
+        padding: 48px 32px;
+        background: linear-gradient(
+          135deg,
+          var(--bg-warm),
+          var(--secondary-light)
+        );
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .references::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+      }
+
+      .references h2 {
+        font-family: "Noto Serif SC", serif;
+        font-size: 1.5rem;
+        color: var(--text);
+        margin-bottom: 24px;
+        font-weight: 700;
+      }
+
+      .references ol {
+        padding-left: 0;
+        list-style: none;
+        counter-reset: ref-counter;
+      }
+
+      .references li {
+        counter-increment: ref-counter;
+        margin-bottom: 12px;
+        padding-left: 36px;
+        position: relative;
+        font-size: 15px;
+        line-height: 1.8;
+        color: var(--text-light);
+      }
+
+      .references li::before {
+        content: "[" counter(ref-counter) "]";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 60px 20px 40px;
+        color: #aaa;
+        font-size: 14px;
+      }
+
+      footer p {
+        text-align: center;
+        margin-bottom: 0;
+      }
+
+      footer .heart {
+        color: var(--primary);
+      }
+
+      /* Table of Contents */
+      .toc {
+        position: fixed;
+        top: 24px;
+        right: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease;
+        background: rgba(253, 251, 251, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 16px 10px;
+        border-radius: 24px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      }
+
+      .toc.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .toc-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(211, 109, 108, 0.25);
+        position: relative;
+        transition: all 0.35s ease;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .toc-dot:hover {
+        background: rgba(211, 109, 108, 0.6);
+        transform: scale(1.2);
+      }
+
+      .toc-dot.active {
+        background: var(--primary);
+        transform: scale(1.4);
+        box-shadow: 0 0 0 4px rgba(211, 109, 108, 0.15);
+      }
+
+      .toc-label {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--primary);
+        opacity: 0;
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
+        white-space: nowrap;
+        pointer-events: none;
+        letter-spacing: 1px;
+      }
+
+      .toc-dot:hover .toc-label {
+        opacity: 1;
+        transform: translateY(-50%) translateX(-4px);
+      }
+
+      @media (max-width: 640px) {
+        .toc {
+          right: 12px;
+          top: 12px;
+          padding: 12px 8px;
+          gap: 10px;
+        }
+        .toc-dot {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 640px) {
+        body {
+          font-size: 16px;
+        }
+
+        .section {
+          padding: 48px 0;
+        }
+
+        .section-header {
+          gap: 12px;
+          margin-bottom: 32px;
+        }
+
+        .references {
+          padding: 32px 20px;
+        }
+
+        blockquote {
+          padding: 24px 20px;
+        }
+      }
+
+      /* AOS-style scroll reveal */
+      [data-aos] {
+        opacity: 0;
+        transition-property: opacity, transform;
+        transition-duration: 0.4s;
+        transition-timing-function: ease;
+        will-change: opacity, transform;
+      }
+
+      [data-aos="fade-up"] {
+        transform: translateY(20px);
+      }
+
+      [data-aos].aos-animate {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+
+      [data-aos-delay="100"] {
+        transition-delay: 0.1s;
+      }
+      [data-aos-delay="200"] {
+        transition-delay: 0.2s;
+      }
+      [data-aos-delay="300"] {
+        transition-delay: 0.3s;
+      }
+      [data-aos-delay="400"] {
+        transition-delay: 0.4s;
+      }
+      [data-aos-delay="500"] {
+        transition-delay: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-content">
+        <div class="hero-subtitle">Feature Story</div>
+        <h1>女性玩家，<br /><span class="highlight">正在改变游戏市场</span></h1>
+        <p class="hero-intro">
+          在大众的刻板印象中，女性玩家并非是电子游戏的忠实爱好者。然而，随着移动电子设备的不断发展，女性玩家大量涌入游戏市场。女性的消费力和对游戏的粘着力使游戏开放商业渐渐意识到，女性玩家这一群体在当下也有着不可忽视的地位。
+        </p>
+        <p
+          class="lead"
+          style="color: var(--primary); font-size: 1.3rem; font-weight: 600"
+        >
+          说到底，谁不喜欢玩游戏呢？
+        </p>
+      </div>
+      <a
+        class="scroll-indicator"
+        href="#chapter01"
+        onclick="
+          event.preventDefault();
+          document
+            .querySelector('.section')
+            .scrollIntoView({ behavior: 'smooth' });
+        "
+      >
+        <span>向下阅读</span>
+        <div class="arrow"></div>
+      </a>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="toc" id="toc">
+      <a href="#chapter01" class="toc-dot active" data-target="chapter01"
+        ><span class="toc-label">01</span></a
+      >
+      <a href="#chapter02" class="toc-dot" data-target="chapter02"
+        ><span class="toc-label">02</span></a
+      >
+      <a href="#chapter03" class="toc-dot" data-target="chapter03"
+        ><span class="toc-label">03</span></a
+      >
+      <a href="#chapter04" class="toc-dot" data-target="chapter04"
+        ><span class="toc-label">04</span></a
+      >
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+      <!-- Section 01 -->
+      <section class="section" id="chapter01">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <h2 class="section-title">被"隐身"的女性玩家</h2>
+        </div>
+
+        <p>
+          从游戏发展历程来看，男性在较长的时间中一直占据着电子游戏的主体受众身份。但现在，电子游戏领域的性别格局已今非昔比。
+        </p>
+
+        <p>
+          根据Newzoo的调查，如今在全球范围内已有超过10亿的女性游戏爱好者。自2016年起，女性玩家人数占比就已经达到47%，几乎可以与男性玩家数量持平。
+        </p>
+
+        <p>但是，女性玩家又为何会在游戏受众中"隐身"呢？</p>
+
+        <p>
+          我们发现，在女性游戏爱好者中，占比最多的是休闲玩家：超三分之一的女性玩家都属于休闲玩家，远远超过男性中休闲玩家的比例。对于休闲玩家而言，游戏可以在碎片时间进行，玩游戏主要为了娱乐消遣，竞技性较弱。
+        </p>
+
+        <div class="image-container">
+          <img src="image/1.1.png" alt="女性玩家数据图表" />
+        </div>
+
+        <p>
+          休闲玩家的游戏过程往往是单人参与的，玩家与玩家之间的沟通和交流并不强，并且玩家的心态普遍比较平和。休闲玩家玩游戏的第一目的并不是打败对方或取得胜利，因此不过分关注游戏的输赢，是游戏中的平和派。竞技带来的激烈讨论较少作用在这类玩家身上。
+        </p>
+
+        <p>
+          对比男性玩家中占比最多的页游玩家，他们大多看重竞技、对抗，因此更愿意去讨论玩游戏时的策略、攻略，更愿意在游戏的相关讨论中发声，也能借助重大电竞赛事等契机获取更多的关注度。
+        </p>
+
+        <p>
+          同时，提供给女性广泛讨论游戏的平台本就乏善可陈。缺乏讨论环境与讨论欲望的结果正是女性休闲玩家在游戏的舆论场中的集体失声。尽管女性休闲玩家数量并不少，在游戏相关的讨论中却较少看到她们的身影，听到她们的声音。
+        </p>
+
+        <p>
+          但事实上，休闲玩家占比多并不影响女性玩家为游戏带来高额的收入。仅仅在2020年这一年中，女性玩家就为游戏市场带来了656亿元的收入。
+        </p>
+
+        <div class="image-container">
+          <img src="image/1.2.png" alt="女性游戏市场收入数据" />
+        </div>
+
+        <p>
+          有需求才会有供给，女性玩家是否存在，观察游戏市场就可以明显地感受到。不同于男性玩家对竞技的需求，女性玩家的需求更为感性、社交性更强。随着奇迹暖暖、恋与制作人等以女性为受众对象的游戏诞生，女性游戏的市场被打开，潜力也不断被挖掘。
+        </p>
+
+        <p>
+          根据前瞻产业研究院发布的女性游戏行业市场报告，2016-2020年我国女性玩家贡献的游戏销售收入逐年增长，且有继续增长的态势。而Playgroundz发布的研究显示，女性玩家在移动游戏的付费率紧追男性玩家，2018年全球有68%的移动游戏收入来自女性。
+        </p>
+      </section>
+
+      <div class="section-divider" data-aos="fade-up"></div>
+
+      <!-- Section 02 -->
+      <section class="section" id="chapter02">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <h2 class="section-title">玩游戏，不用分性别</h2>
+        </div>
+
+        <p>在知乎上有一个问题：女性是否不爱玩电子游戏，为什么？</p>
+
+        <p>
+          1352个回答里，不少女性玩家现身说法表示事实并非如此。玩过近200款游戏的女性网友"粿条"点出了女性玩家不受重视的现状："现在许多打着一般向游戏幌子的游戏，其实主要照顾的是男玩家的感受。"许多所谓的"电子游戏"，在最初并不为女性而开发，考虑到剧情角色塑造的平等性与游戏中的性别偏见与性引导内容，同一游戏中的女性玩家的游玩体验可能远远不及男性玩家高。
+        </p>
+
+        <p>
+          刻板印象中的电子游戏，通常指的是偏重对抗性和竞技性的游戏，而女性会偏爱的益智类、休闲类、沙盒类等一众更偏重脑力、创造力的游戏时常被排除在外。网友"粿条"在提及偶像梦幻祭这款游戏时就谈到了女性向游戏被忽视的现状，"音游人大部分是男性，所以他们在盘点音游时，基本上全都会忽略这款游戏，因为它是女性向游戏。"
+        </p>
+
+        <p>
+          但刻板印象的存在并不意味着女孩子们就会因此放弃游戏带来的快乐，她们仍活跃在游戏世界的不同角落。
+        </p>
+
+        <div class="image-container">
+          <img src="image/2.1.png" alt="女性玩家游戏偏好数据" />
+        </div>
+
+        <p>
+          从宏观层面上看女性玩家的游戏偏好，射击、消除、沙盒三类游戏的女性玩家月活量最多，均达到1.5亿以上。从玩家的增加值来看，沙盒、消除、模拟经营三类游戏的女性玩家增长最多，其中沙盒类游戏和消除类游戏的女性玩家一年中增长了2000万。
+        </p>
+
+        <p>
+          聚焦到个体层面上，女性偏好的游戏从游戏时长中可窥一斑。益智答题类游戏深受女性玩家的喜爱，每周的平均游玩时长接近5小时。
+        </p>
+
+        <div class="image-container">
+          <img src="image/2.2.png" alt="女性玩家游戏时长数据" />
+        </div>
+
+        <p>
+          相比于一盘就能玩上至少20分钟的对抗型游戏，益智答题类游戏更偏向于休闲与放松，可以在忙碌的生活、工作间隙随时打开玩上一局，虽然一局的时间不长，但是却胜在可以随开随玩，也不需要精神高度的投入，可以满足放松、娱乐消遣的心理需求。
+        </p>
+
+        <p>使生活得到一些快乐与轻松，这是游戏诞生最根本的意义。</p>
+
+        <blockquote>
+          <p>
+            "但是游戏就是游戏，创造出来就是让人得到快乐的，快乐还分男女，太狭隘了。"
+          </p>
+          <p
+            style="
+              margin-top: 12px;
+              font-size: 0.95rem;
+              color: var(--text-light);
+            "
+          >
+            —— 知乎网友"阳台难以攻陷"
+          </p>
+        </blockquote>
+      </section>
+
+      <div class="section-divider" data-aos="fade-up"></div>
+
+      <!-- Section 03 -->
+      <section class="section" id="chapter03">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <h2 class="section-title">走近游戏猛女——！</h2>
+        </div>
+
+        <p>
+          在豆瓣小组"女性玩家联合会"中，聚集了国内的一批女性游戏爱好者。组员们自称猛女，在组里分享打游戏的经历，交流心得和经验。
+        </p>
+
+        <p>
+          组里聊得最多的话题是安利。组员们乐于推荐自己玩过的好游戏，也有许多新入坑的组员发帖求助有经验的"猛女们"给自己推荐好游戏。除此之外，大家还会寻找一起联机玩游戏的伙伴、寻求游戏相关的帮助、讨论游戏的角色和剧情。
+        </p>
+
+        <div class="image-container">
+          <img src="image/3.1.png" alt="女性玩家联合会讨论话题" />
+        </div>
+
+        <p>
+          我们筛选了近三个月的小组讨论，并整理出了"女性玩家联合会"中最高讨论度的游戏。不难发现，小组中PC游戏与主机游戏讨论度较高。著名游戏公司任天堂于2022年9月新鲜发布的第三人称射击游戏Splatoon3无疑成为了近期讨论中最热门的游戏。
+        </p>
+
+        <p>
+          当然，赛博朋克2077、塞尔达传说、双人成行等耳熟能详的高人气游戏作品也不会被"女性玩家联合会"中的猛女们错过。除了这些发售不超过五年的年轻游戏，高讨论度的游戏中不乏仙剑奇侠传、逆转裁判此类老牌游戏ip。
+        </p>
+
+        <div class="image-container">
+          <img src="image/3.2.png" alt="高讨论度游戏排行" />
+        </div>
+
+        <p>
+          说到游戏平台，女玩家们最常使用的设备依次是手机、电脑和主机。手机游戏凭借其便捷性收获了最多的玩家，而PC端有最多的游戏种类，且本身功能多样，一直拥有较高的用户占有率。主机游戏的开发时间普遍较长，因此游戏的体验效果是最出色的，但游戏主机价格高昂，部分机器便携性较前两者更弱一些，因此选择为游戏购入专用设备的玩家会略少一些。
+        </p>
+
+        <p>
+          当游戏玩家们谈到游戏时，大家关心的内容总是如出一辙的。正如任何游戏玩家之间的讨论，女性玩家们在一起会讨论游戏的剧情角色，也会交流硬件配置与过关方法。女性玩家讨论的游戏并不仅仅包括女性向的游戏，而游玩游戏的平台在男女玩家中也没有明显的差别。
+        </p>
+
+        <p>
+          不必戴着有色眼镜来看游戏中的女性玩家，因为无论性别，所有的玩家都只是享受游戏本身的游戏爱好者。正如"女性玩家联合会"小组中的猛女们看待游戏的态度——
+        </p>
+
+        <blockquote>
+          <p>
+            “我们不带偏见地玩任何平台的任何类型的游戏，这也是了解世界的一部分。”
+          </p>
+        </blockquote>
+      </section>
+
+      <div class="section-divider" data-aos="fade-up"></div>
+
+      <!-- Section 04 -->
+      <section class="section" id="chapter04">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <h2 class="section-title">她们的解构与重塑</h2>
+        </div>
+
+        <p>
+          女性玩家的心理很大程度决定了她们对于游戏的选择。那么，这些玩游戏的女孩子们，都在想什么？
+        </p>
+
+        <p>
+          探访以恋爱、养成为主要游戏内容的女性向游戏玩家时，多数受访者都表示很抵触游戏中的偏见，即：认为女性都是柔弱的，需要被保护的。她们更希望自己在游戏中不再是被保护的角色，希望树立起独立、勇敢的形象。这从女性玩家偏爱的男性角色特质中可见一斑。
+        </p>
+
+        <p>
+          研究女性向游戏玩家的报告显示，最吸引女玩家的两个男性角色特质分别是温柔和善解人意。这反映了女性希望可以获得男性平等的尊重和理解，而不是忽视女性自身意志的男性单方面的强势的保护。虽然"霸道""阳刚"等传统特质仍然流行，但能够看出，女性正通过在游戏中对男性角色的塑造来表达对旧的性别身份认知的挑战与反思，建立对独立女性的性别身份认同。
+        </p>
+
+        <div class="image-container">
+          <img src="image/4.1.png" alt="女性玩家角色偏好" />
+        </div>
+
+        <p>
+          除却在女性向游戏中对角色本身进行塑造之外，女性玩家还热衷通过二创来对游戏剧情和角色进行解读与再创作。优质衍生创作的传播反哺了游戏作品本身，也为游戏作品吸引了更多以女性为主体的受众。
+        </p>
+
+        <p>
+          我们观察了女性用户占比接近九成的国内最大的同人作品分享平台Lofter。在这一平台上，有大量的女性玩家在这里分享她们为游戏创作的同人小说、同人漫画，通过二创的形式抒发自己游玩后的创作欲，并与其他玩家进行分享。
+        </p>
+
+        <p>
+          热门的手机游戏通常拥有大量衍生创作，而PC游戏与主机游戏也并不逊色。2015年发售的游戏Undertale以16万参与数遥遥领先于其他热门PC游戏、主机游戏，而最终幻想、守望先锋等游戏也有5万余参与数。
+        </p>
+
+        <div class="image-container">
+          <img src="image/4.2.png" alt="Lofter游戏同人创作数据" />
+        </div>
+
+        <p>
+          与女性在游戏中重塑自我身份、得到积极情感暗示的期望相反，目前游戏市场中，女性角色的身体仍被视为一种能引起性快感的商品而存在。
+        </p>
+
+        <p>
+          电子游戏发展至今日，女性角色的身体在视觉呈现上的裸露情况较之以往得到了一定改善，但是，她们的身体依然呈现出高度性感的特点。她们可能不再有大片的身体裸露在外，但是，通过紧密贴合身体线条的衣着和对关键部位的裸露处理，她们依然被贴上"性感"的标签，放置于男性凝视的目光下被观赏。这与男性角色的裸露情况相比可谓云泥之别。
+        </p>
+
+        <div class="image-container">
+          <img src="image/4.3.png" alt="游戏中女性角色形象分析" />
+        </div>
+
+        <p>
+          电子游戏作为关注愉悦和宣泄的娱乐产品，并不会总向受众呈现一种能够反思社会状态的冲突。作为女性玩家，在娱乐中也应当警惕设计者是否无意识地在游戏中传递对女性的规训。玩家作为能动方，可以有意识地探究自己情绪的来源，打破"第四面墙"。
+        </p>
+
+        <p>
+          无论是游戏的制作还是消费，女性作为近十年新兴的独特群体都拥有全新的视角，在未来的游戏产业发展中，女性从业者的增加是可以展望的。在被誉为第九艺术的游戏中加入更多女性视角，也不失为一种独特的选择。
+        </p>
+      </section>
+
+      <!-- References -->
+      <section class="references" data-aos="fade-up">
+        <h2>参考文献</h2>
+        <ol>
+          <li>
+            虚实双重压力与聚合抵抗——"女性玩家联合会"的亚文化研究[J].
+            慕海昕,张自中,彭兰. 西北师大学报(社会科学版). 2022,59(05)
+          </li>
+          <li>
+            电子游戏中的女性身体景观建构研究[D]. 李颖.天津师范大学.2022.11
+          </li>
+          <li>
+            从认识到意动：女性向电子游戏玩家的消费行为研究——以女性向游戏《食物语》为例[D].
+            栗一丹.重庆大学.2021.06
+          </li>
+          <li>
+            传播学视域下电子游戏中女性角色的变迁研究——以20世纪80年代至今中外角色扮演类电子游戏为例[D].
+            李雪莹.北京外国语大学.2022.05
+          </li>
+          <li>
+            中国音像与数字出版协会游戏出版工作委员会《2019年中国游戏产业报告》
+          </li>
+          <li>Mob研究院《2020"她游戏"研究报告》</li>
+          <li>网易《LOFTER用户兴趣消费报告》</li>
+          <li>
+            前瞻产业研究院《2021年中国女性游戏行业市场规模及发展前景分析》
+          </li>
+          <li>知乎《女性是否不爱玩电子游戏，为什么？》</li>
+          <li>
+            Mary Brune. Zooming in on Female Gamers with Consumer Insights Data
+          </li>
+          <li>
+            Sander Bosman. Women Account for 46% of All Game Enthusiasts:
+            Watching Game Video Content and Esports Has Changed How Women and
+            Men Alike Engage with Games
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with love by 00 <span class="heart">♥</span></p>
+    </footer>
+
+    <script>
+      // Scroll direction tracking
+      // Auto-assign data-aos to paragraphs, images and blockquotes
+      document
+        .querySelectorAll(
+          ".section p, .section .image-container, .section blockquote",
+        )
+        .forEach((el) => {
+          el.setAttribute("data-aos", "fade-up");
+        });
+
+      // Intersection Observer for AOS
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("aos-animate");
+            } else {
+              entry.target.classList.remove("aos-animate");
+            }
+          });
+        },
+        { threshold: 0.05, rootMargin: "0px 0px -20px 0px" },
+      );
+
+      document.querySelectorAll("[data-aos]").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Table of Contents: show/hide based on hero visibility
+      const toc = document.getElementById("toc");
+      const hero = document.querySelector(".hero");
+
+      const heroObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              toc.classList.remove("visible");
+            } else {
+              toc.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0 },
+      );
+
+      if (hero) heroObserver.observe(hero);
+
+      // TOC click: smooth scroll to chapter
+      document.querySelectorAll(".toc-dot").forEach((dot) => {
+        dot.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = dot.getAttribute("href");
+          const target = document.querySelector(targetId);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // Highlight current chapter
+      function updateActiveChapter() {
+        const sections = document.querySelectorAll(".section");
+        let activeId = "";
+        let minDistance = Infinity;
+        const viewportCenter = window.innerHeight * 0.35;
+
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          if (
+            rect.top < window.innerHeight * 0.8 &&
+            rect.bottom > window.innerHeight * 0.2
+          ) {
+            const distance = Math.abs(rect.top - viewportCenter);
+            if (distance < minDistance) {
+              minDistance = distance;
+              activeId = section.id;
+            }
+          }
+        });
+
+        if (activeId) {
+          document.querySelectorAll(".toc-dot").forEach((d) => {
+            d.classList.toggle("active", d.dataset.target === activeId);
+          });
+        }
+      }
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          requestAnimationFrame(updateActiveChapter);
+        },
+        { passive: true },
+      );
+      updateActiveChapter();
+    </script>
+  </body>
+</html>
